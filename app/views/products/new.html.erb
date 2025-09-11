@@ -1,0 +1,24 @@
+<div class="flex flex-col gap-10 p-8">
+  <h1 class="text-6xl font-extrabold text-red-700">Create New Product</h1>
+
+  <%= form_with(model: @product, class: "flex flex-col gap-4 p-8 border-2 rounded-2xl bg-red-50") do |form| %>
+    <div class="flex flex-col gap-2">
+      <%= form.label :name, class: "text-xl font-semibold" %>
+      <%= form.text_field :name, class: "p-2 border rounded-md text-lg" %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :description, class: "text-xl font-semibold" %>
+      <%= form.text_area :description, class: "p-2 border rounded-md text-lg h-32" %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :price, class: "text-xl font-semibold" %>
+      <%= form.number_field :price, step: "0.01", class: "p-2 border rounded-md text-lg" %>
+    </div>
+
+    <%= form.submit "Create Product", class: "mt-5 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer" %>
+  <% end %>
+
+  <%= link_to "Back to Products", products_path, class: "mt-5 px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400" %>
+</div>

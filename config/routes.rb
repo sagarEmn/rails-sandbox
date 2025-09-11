@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "pages/home"
+  get "pages/contact"
   get "products/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,7 +16,13 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   Rails.application.routes.draw do
-  get "products/index"
+  get "pages/home"
+  get "pages/contact"
+
+    # Homepage
+    root "pages#home" # root path
+
     get "/products", to: "products#index"
+    get "/contact", to: "pages#contact"
   end
 end

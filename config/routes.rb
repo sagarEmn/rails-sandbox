@@ -24,5 +24,6 @@ Rails.application.routes.draw do
 
     get "/products", to: "products#index"
     get "/contact", to: "pages#contact"
+    resources :products
   end
 end

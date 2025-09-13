@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   get "pages/home"
   get "pages/contact"
   get "products/index"
@@ -16,6 +17,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   Rails.application.routes.draw do
+  resources :categories
+  resources :products
+
   get "pages/home"
   get "pages/contact"
 
@@ -24,6 +28,5 @@ Rails.application.routes.draw do
 
     get "/products", to: "products#index"
     get "/contact", to: "pages#contact"
-    resources :products
   end
 end
